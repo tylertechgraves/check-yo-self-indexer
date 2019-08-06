@@ -12,6 +12,14 @@
     <PackageReference Include="NSwag.Annotations" Version="13.0.4" />
     <PackageReference Include="NSwag.AspNetCore" Version="13.0.4" />
     <PackageReference Include="NSwag.MSBuild" Version="13.0.4" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
   </ItemGroup>
+
+  <Target Name="NSwag" AfterTargets="Publish">
+    <Copy SourceFiles="@(ReferencePath)" DestinationFolder="$(OutDir)References" />
+    <Exec Command="echo $(Configuration)" />
+    <Exec Command="$(NSwagExe_Core22) run sdk.nswag /variables:configuration=$(Configuration)" />
+    <RemoveDir Directories="$(OutDir)References" />
+  </Target>
 
 </Project>
