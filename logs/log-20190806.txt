@@ -1,0 +1,615 @@
+2019-08-06 15:48:06.530 -05:00 [Debug] [markgravessmbp] [] Hosting starting
+2019-08-06 15:48:06.686 -05:00 [Information] [markgravessmbp] [] User profile is available. Using '/Users/markgraves/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-08-06 15:48:06.693 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-d8e2e796-9cf3-4f85-a5ac-a2d9bd398708.xml'.
+2019-08-06 15:48:06.709 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-88e8c21a-4ce1-4788-b4c6-823a6796a3da.xml'.
+2019-08-06 15:48:06.712 -05:00 [Debug] [markgravessmbp] [] Found key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708".
+2019-08-06 15:48:06.720 -05:00 [Debug] [markgravessmbp] [] Found key "88e8c21a-4ce1-4788-b4c6-823a6796a3da".
+2019-08-06 15:48:06.727 -05:00 [Debug] [markgravessmbp] [] Considering key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" with expiration date "2019-09-17T15:00:22.1572850+00:00" as default key.
+2019-08-06 15:48:06.761 -05:00 [Debug] [markgravessmbp] [] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-08-06 15:48:06.770 -05:00 [Debug] [markgravessmbp] [] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2019-08-06 15:48:06.771 -05:00 [Debug] [markgravessmbp] [] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2019-08-06 15:48:06.775 -05:00 [Debug] [markgravessmbp] [] Using key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" as the default key.
+2019-08-06 15:48:06.775 -05:00 [Debug] [markgravessmbp] [] Key ring with default key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" was loaded during application startup.
+2019-08-06 15:48:06.898 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using default value false
+2019-08-06 15:48:06.925 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using default value false
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using default value false
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using default value false
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using default value "AllExceptions"
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using default value false
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch EnableEndpointRouting in type MvcOptions is using default value false
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch MaxValidationDepth in type MvcOptions is using default value null
+2019-08-06 15:48:06.926 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using default value false
+2019-08-06 15:48:06.955 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:48:06.955 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:48:06.955 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:48:06.959 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowAreas in type RazorPagesOptions is using default value false
+2019-08-06 15:48:06.959 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using default value false
+2019-08-06 15:48:06.959 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using default value false
+2019-08-06 15:48:06.970 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2019-08-06 15:48:06.990 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using default value false
+2019-08-06 15:48:06.990 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using default value false
+2019-08-06 15:48:07.095 -05:00 [Debug] [markgravessmbp] [] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-08-06 15:48:07.140 -05:00 [Debug] [markgravessmbp] [] Failed to locate the development https certificate at 'null'.
+2019-08-06 15:48:07.200 -05:00 [Debug] [markgravessmbp] [] Using development certificate: CN=localhost (Thumbprint: 082F697D7137507B4515FCCDE1A54178212AAE0B)
+2019-08-06 15:48:07.223 -05:00 [Debug] [markgravessmbp] [] Hosting started
+2019-08-06 15:48:07.223 -05:00 [Debug] [markgravessmbp] [] Loaded hosting startup assembly check-yo-self-indexer
+2019-08-06 15:48:07.319 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T1" started.
+2019-08-06 15:48:07.379 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T2" started.
+2019-08-06 15:48:07.444 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T3" started.
+2019-08-06 15:48:07.445 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T1" received FIN.
+2019-08-06 15:48:07.445 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T2" received FIN.
+2019-08-06 15:48:07.456 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:48:07.456 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:48:07.508 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T1" sending FIN because: "The client closed the connection."
+2019-08-06 15:48:07.508 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T2" sending FIN because: "The client closed the connection."
+2019-08-06 15:48:07.518 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T2" disconnecting.
+2019-08-06 15:48:07.519 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T1" disconnecting.
+2019-08-06 15:48:07.555 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T1" stopped.
+2019-08-06 15:48:07.555 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T2" stopped.
+2019-08-06 15:48:07.572 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger  
+2019-08-06 15:48:07.574 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T3:00000001] Wildcard detected, all requests with hosts will be allowed.
+2019-08-06 15:48:07.574 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T3:00000001] All hosts are allowed.
+2019-08-06 15:48:07.611 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T3:00000001] Connection id "0HLOQLTHAJ7T3" completed keep alive response.
+2019-08-06 15:48:07.612 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000001] Request finished in 40.1315ms 302 
+2019-08-06 15:48:07.618 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/index.html  
+2019-08-06 15:48:07.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T3:00000002] All hosts are allowed.
+2019-08-06 15:48:07.711 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T3:00000002] Connection id "0HLOQLTHAJ7T3" completed keep alive response.
+2019-08-06 15:48:07.711 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000002] Request finished in 93.2124ms 200 text/html; charset=utf-8
+2019-08-06 15:48:07.767 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui.css  
+2019-08-06 15:48:07.767 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T4" started.
+2019-08-06 15:48:07.767 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] All hosts are allowed.
+2019-08-06 15:48:07.770 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T5" started.
+2019-08-06 15:48:07.791 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] Range header's value is empty.
+2019-08-06 15:48:07.797 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T4" received FIN.
+2019-08-06 15:48:07.798 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T6" started.
+2019-08-06 15:48:07.797 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:48:07.824 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T5" received FIN.
+2019-08-06 15:48:07.825 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T4" sending FIN because: "The client closed the connection."
+2019-08-06 15:48:07.825 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T7" started.
+2019-08-06 15:48:07.825 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T4" disconnecting.
+2019-08-06 15:48:07.826 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T4" stopped.
+2019-08-06 15:48:07.825 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:48:07.854 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T5" disconnecting.
+2019-08-06 15:48:07.854 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2019-08-06 15:48:07.854 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLTHAJ7T5" stopped.
+2019-08-06 15:48:07.856 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-bundle.js  
+2019-08-06 15:48:07.900 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] All hosts are allowed.
+2019-08-06 15:48:07.900 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] Range header's value is empty.
+2019-08-06 15:48:07.902 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-standalone-preset.js  
+2019-08-06 15:48:07.903 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] All hosts are allowed.
+2019-08-06 15:48:07.903 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] Range header's value is empty.
+2019-08-06 15:48:07.911 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2019-08-06 15:48:07.911 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2019-08-06 15:48:07.911 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] Connection id "0HLOQLTHAJ7T3" completed keep alive response.
+2019-08-06 15:48:07.911 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] Connection id "0HLOQLTHAJ7T7" completed keep alive response.
+2019-08-06 15:48:07.911 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T3:00000003] Request finished in 192.6379ms 200 text/css
+2019-08-06 15:48:07.911 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T7:00000001] Request finished in 8.5682ms 200 application/javascript
+2019-08-06 15:48:07.917 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2019-08-06 15:48:07.917 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] Connection id "0HLOQLTHAJ7T6" completed keep alive response.
+2019-08-06 15:48:07.917 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000001] Request finished in 61.4264ms 200 application/javascript
+2019-08-06 15:48:08.139 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/v1/swagger.json  
+2019-08-06 15:48:08.139 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] All hosts are allowed.
+2019-08-06 15:48:08.139 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] The request path /v1/swagger.json does not match an existing file
+2019-08-06 15:48:08.141 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] The request path /swagger/v1/swagger.json does not match an existing file
+2019-08-06 15:48:08.776 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] Connection id "0HLOQLTHAJ7T6" completed keep alive response.
+2019-08-06 15:48:08.779 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000002] Request finished in 664.9275ms 200 application/json; charset=utf-8
+2019-08-06 15:48:13.520 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Request starting HTTP/1.1 GET https://localhost:5002/api/AppConfig  
+2019-08-06 15:48:13.544 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] All hosts are allowed.
+2019-08-06 15:48:13.544 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] The request path  does not match the path filter
+2019-08-06 15:48:13.544 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] The request path /api/AppConfig does not match a supported file type
+2019-08-06 15:48:13.573 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Request successfully matched the route with name 'null' and template 'api/AppConfig'
+2019-08-06 15:48:13.599 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Route matched with {action = "Get", controller = "AppConfig"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller check_yo_self_indexer.Server.Controllers.api.AppConfigController (check-yo-self-indexer).
+2019-08-06 15:48:13.600 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"]
+2019-08-06 15:48:13.600 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:48:13.600 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","check_yo_self_indexer.Server.Filters.ModelValidationFilter","Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter"]
+2019-08-06 15:48:13.600 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Execution plan of exception filters (in the following order): ["check_yo_self_indexer.Server.Filters.ApiExceptionFilter (Order: 0)"]
+2019-08-06 15:48:13.600 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:48:13.602 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Authorization Filter: Before executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:48:13.606 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Authorization Filter: After executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:48:13.606 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:48:13.607 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:48:13.615 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:48:13.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:48:13.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:48:13.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:48:13.619 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:48:13.619 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:48:13.619 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:48:13.623 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Executing action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer) - Validation state: "Valid"
+2019-08-06 15:48:13.625 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Executed action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.23320000000000002ms.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:48:13.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:48:13.627 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:48:13.628 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:48:13.630 -05:00 [Verbose] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2019-08-06 15:48:13.631 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2019-08-06 15:48:13.634 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Attempting to select an output formatter based on Accept header '["application/json"]'.
+2019-08-06 15:48:13.634 -05:00 [Debug] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2019-08-06 15:48:13.635 -05:00 [Information] [markgravessmbp] [0HLOQLTHAJ7T6:00000003] Executing ObjectResult, writing value of type 'check_yo_self_indexer.Entities.Config.AppConfig'.
+2019-08-06 15:49:15.261 -05:00 [Debug] [markgravessmbp] [] Hosting starting
+2019-08-06 15:49:15.403 -05:00 [Information] [markgravessmbp] [] User profile is available. Using '/Users/markgraves/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-08-06 15:49:15.409 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-d8e2e796-9cf3-4f85-a5ac-a2d9bd398708.xml'.
+2019-08-06 15:49:15.426 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-88e8c21a-4ce1-4788-b4c6-823a6796a3da.xml'.
+2019-08-06 15:49:15.428 -05:00 [Debug] [markgravessmbp] [] Found key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708".
+2019-08-06 15:49:15.436 -05:00 [Debug] [markgravessmbp] [] Found key "88e8c21a-4ce1-4788-b4c6-823a6796a3da".
+2019-08-06 15:49:15.443 -05:00 [Debug] [markgravessmbp] [] Considering key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" with expiration date "2019-09-17T15:00:22.1572850+00:00" as default key.
+2019-08-06 15:49:15.479 -05:00 [Debug] [markgravessmbp] [] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-08-06 15:49:15.489 -05:00 [Debug] [markgravessmbp] [] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2019-08-06 15:49:15.489 -05:00 [Debug] [markgravessmbp] [] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2019-08-06 15:49:15.494 -05:00 [Debug] [markgravessmbp] [] Using key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" as the default key.
+2019-08-06 15:49:15.495 -05:00 [Debug] [markgravessmbp] [] Key ring with default key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" was loaded during application startup.
+2019-08-06 15:49:15.616 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using default value "AllExceptions"
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch EnableEndpointRouting in type MvcOptions is using default value false
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch MaxValidationDepth in type MvcOptions is using default value null
+2019-08-06 15:49:15.642 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using default value false
+2019-08-06 15:49:15.671 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:49:15.671 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:49:15.671 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:49:15.674 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowAreas in type RazorPagesOptions is using default value false
+2019-08-06 15:49:15.674 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using default value false
+2019-08-06 15:49:15.674 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using default value false
+2019-08-06 15:49:15.685 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2019-08-06 15:49:15.730 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using default value false
+2019-08-06 15:49:15.730 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using default value false
+2019-08-06 15:49:15.858 -05:00 [Debug] [markgravessmbp] [] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-08-06 15:49:15.903 -05:00 [Debug] [markgravessmbp] [] Failed to locate the development https certificate at 'null'.
+2019-08-06 15:49:15.960 -05:00 [Debug] [markgravessmbp] [] Using development certificate: CN=localhost (Thumbprint: 082F697D7137507B4515FCCDE1A54178212AAE0B)
+2019-08-06 15:49:15.985 -05:00 [Debug] [markgravessmbp] [] Hosting started
+2019-08-06 15:49:15.985 -05:00 [Debug] [markgravessmbp] [] Loaded hosting startup assembly check-yo-self-indexer
+2019-08-06 15:49:16.079 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4N" started.
+2019-08-06 15:49:16.134 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4O" started.
+2019-08-06 15:49:16.195 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4N" received FIN.
+2019-08-06 15:49:16.196 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4O" received FIN.
+2019-08-06 15:49:16.197 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4P" started.
+2019-08-06 15:49:16.274 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:49:16.274 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:49:16.325 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4N" sending FIN because: "The client closed the connection."
+2019-08-06 15:49:16.325 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4O" sending FIN because: "The client closed the connection."
+2019-08-06 15:49:16.335 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4N" disconnecting.
+2019-08-06 15:49:16.335 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4O" disconnecting.
+2019-08-06 15:49:16.429 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4N" stopped.
+2019-08-06 15:49:16.429 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4O" stopped.
+2019-08-06 15:49:16.444 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger  
+2019-08-06 15:49:16.445 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4P:00000001] Wildcard detected, all requests with hosts will be allowed.
+2019-08-06 15:49:16.445 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000001] All hosts are allowed.
+2019-08-06 15:49:16.482 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4P:00000001] Connection id "0HLOQLU5QBQ4P" completed keep alive response.
+2019-08-06 15:49:16.482 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000001] Request finished in 38.7645ms 302 
+2019-08-06 15:49:16.488 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/index.html  
+2019-08-06 15:49:16.488 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000002] All hosts are allowed.
+2019-08-06 15:49:16.580 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4P:00000002] Connection id "0HLOQLU5QBQ4P" completed keep alive response.
+2019-08-06 15:49:16.581 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000002] Request finished in 93.0283ms 200 text/html; charset=utf-8
+2019-08-06 15:49:16.609 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui.css  
+2019-08-06 15:49:16.609 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4Q" started.
+2019-08-06 15:49:16.609 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] All hosts are allowed.
+2019-08-06 15:49:16.611 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4R" started.
+2019-08-06 15:49:16.627 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4Q" received FIN.
+2019-08-06 15:49:16.628 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4S" started.
+2019-08-06 15:49:16.628 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:49:16.630 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4Q" disconnecting.
+2019-08-06 15:49:16.630 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4Q" sending FIN because: "The Socket transport's send loop completed gracefully."
+2019-08-06 15:49:16.630 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4Q" stopped.
+2019-08-06 15:49:16.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] Range header's value is empty.
+2019-08-06 15:49:16.640 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4R" received FIN.
+2019-08-06 15:49:16.640 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:49:16.641 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4T" started.
+2019-08-06 15:49:16.687 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4R" sending FIN because: "The client closed the connection."
+2019-08-06 15:49:16.688 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4R" disconnecting.
+2019-08-06 15:49:16.689 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4R" stopped.
+2019-08-06 15:49:16.691 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-bundle.js  
+2019-08-06 15:49:16.691 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] All hosts are allowed.
+2019-08-06 15:49:16.691 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] Range header's value is empty.
+2019-08-06 15:49:16.745 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2019-08-06 15:49:16.745 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] Connection id "0HLOQLU5QBQ4P" completed keep alive response.
+2019-08-06 15:49:16.746 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000003] Request finished in 157.9893ms 200 text/css
+2019-08-06 15:49:16.746 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-standalone-preset.js  
+2019-08-06 15:49:16.746 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] All hosts are allowed.
+2019-08-06 15:49:16.746 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] Range header's value is empty.
+2019-08-06 15:49:16.752 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2019-08-06 15:49:16.752 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] Connection id "0HLOQLU5QBQ4P" completed keep alive response.
+2019-08-06 15:49:16.752 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4P:00000004] Request finished in 6.4037ms 200 application/javascript
+2019-08-06 15:49:16.756 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2019-08-06 15:49:16.756 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] Connection id "0HLOQLU5QBQ4S" completed keep alive response.
+2019-08-06 15:49:16.756 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000001] Request finished in 65.3982ms 200 application/javascript
+2019-08-06 15:49:16.958 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/v1/swagger.json  
+2019-08-06 15:49:16.959 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] All hosts are allowed.
+2019-08-06 15:49:16.959 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] The request path /v1/swagger.json does not match an existing file
+2019-08-06 15:49:16.960 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] The request path /swagger/v1/swagger.json does not match an existing file
+2019-08-06 15:49:17.595 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] Connection id "0HLOQLU5QBQ4S" completed keep alive response.
+2019-08-06 15:49:17.597 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000002] Request finished in 638.798ms 200 application/json; charset=utf-8
+2019-08-06 15:49:28.913 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4T" received FIN.
+2019-08-06 15:49:28.938 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4T" sending FIN because: "The client closed the connection."
+2019-08-06 15:49:28.938 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Request starting HTTP/1.1 GET https://localhost:5002/api/AppConfig  
+2019-08-06 15:49:28.961 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] All hosts are allowed.
+2019-08-06 15:49:28.961 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4T" disconnecting.
+2019-08-06 15:49:28.961 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] The request path  does not match the path filter
+2019-08-06 15:49:28.961 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] The request path /api/AppConfig does not match a supported file type
+2019-08-06 15:49:28.963 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLU5QBQ4T" stopped.
+2019-08-06 15:49:28.991 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Request successfully matched the route with name 'null' and template 'api/AppConfig'
+2019-08-06 15:49:29.016 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Route matched with {action = "Get", controller = "AppConfig"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller check_yo_self_indexer.Server.Controllers.api.AppConfigController (check-yo-self-indexer).
+2019-08-06 15:49:29.017 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"]
+2019-08-06 15:49:29.017 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:49:29.017 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","check_yo_self_indexer.Server.Filters.ModelValidationFilter","Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter"]
+2019-08-06 15:49:29.017 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Execution plan of exception filters (in the following order): ["check_yo_self_indexer.Server.Filters.ApiExceptionFilter (Order: 0)"]
+2019-08-06 15:49:29.017 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:49:29.019 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Authorization Filter: Before executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:49:29.023 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Authorization Filter: After executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:49:29.024 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:49:29.025 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:49:29.034 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:49:29.037 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:49:29.037 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:49:29.037 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:49:29.037 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:49:29.038 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:49:29.038 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:49:29.041 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Executing action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer) - Validation state: "Valid"
+2019-08-06 15:49:29.044 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Executed action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.25470000000000004ms.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:49:29.045 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:49:29.047 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:49:29.047 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:49:29.049 -05:00 [Verbose] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2019-08-06 15:49:29.050 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2019-08-06 15:49:29.054 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Attempting to select an output formatter based on Accept header '["application/json"]'.
+2019-08-06 15:49:29.054 -05:00 [Debug] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2019-08-06 15:49:29.054 -05:00 [Information] [markgravessmbp] [0HLOQLU5QBQ4S:00000003] Executing ObjectResult, writing value of type 'check_yo_self_indexer.Entities.Config.AppConfig'.
+2019-08-06 15:50:56.855 -05:00 [Debug] [markgravessmbp] [] Hosting starting
+2019-08-06 15:50:57.013 -05:00 [Information] [markgravessmbp] [] User profile is available. Using '/Users/markgraves/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-08-06 15:50:57.020 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-d8e2e796-9cf3-4f85-a5ac-a2d9bd398708.xml'.
+2019-08-06 15:50:57.037 -05:00 [Debug] [markgravessmbp] [] Reading data from file '/Users/markgraves/.aspnet/DataProtection-Keys/key-88e8c21a-4ce1-4788-b4c6-823a6796a3da.xml'.
+2019-08-06 15:50:57.039 -05:00 [Debug] [markgravessmbp] [] Found key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708".
+2019-08-06 15:50:57.048 -05:00 [Debug] [markgravessmbp] [] Found key "88e8c21a-4ce1-4788-b4c6-823a6796a3da".
+2019-08-06 15:50:57.056 -05:00 [Debug] [markgravessmbp] [] Considering key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" with expiration date "2019-09-17T15:00:22.1572850+00:00" as default key.
+2019-08-06 15:50:57.092 -05:00 [Debug] [markgravessmbp] [] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-08-06 15:50:57.103 -05:00 [Debug] [markgravessmbp] [] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2019-08-06 15:50:57.103 -05:00 [Debug] [markgravessmbp] [] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2019-08-06 15:50:57.107 -05:00 [Debug] [markgravessmbp] [] Using key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" as the default key.
+2019-08-06 15:50:57.108 -05:00 [Debug] [markgravessmbp] [] Key ring with default key "d8e2e796-9cf3-4f85-a5ac-a2d9bd398708" was loaded during application startup.
+2019-08-06 15:50:57.233 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using default value "AllExceptions"
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch EnableEndpointRouting in type MvcOptions is using default value false
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch MaxValidationDepth in type MvcOptions is using default value null
+2019-08-06 15:50:57.259 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using default value false
+2019-08-06 15:50:57.288 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:50:57.288 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:50:57.288 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2019-08-06 15:50:57.291 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowAreas in type RazorPagesOptions is using default value false
+2019-08-06 15:50:57.291 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using default value false
+2019-08-06 15:50:57.291 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using default value false
+2019-08-06 15:50:57.303 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2019-08-06 15:50:57.327 -05:00 [Debug] [markgravessmbp] [] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using default value false
+2019-08-06 15:50:57.328 -05:00 [Debug] [markgravessmbp] [] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using default value false
+2019-08-06 15:50:57.428 -05:00 [Debug] [markgravessmbp] [] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-08-06 15:50:57.479 -05:00 [Debug] [markgravessmbp] [] Failed to locate the development https certificate at 'null'.
+2019-08-06 15:50:57.541 -05:00 [Debug] [markgravessmbp] [] Using development certificate: CN=localhost (Thumbprint: 082F697D7137507B4515FCCDE1A54178212AAE0B)
+2019-08-06 15:50:57.565 -05:00 [Debug] [markgravessmbp] [] Hosting started
+2019-08-06 15:50:57.565 -05:00 [Debug] [markgravessmbp] [] Loaded hosting startup assembly check-yo-self-indexer
+2019-08-06 15:50:57.663 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434717" started.
+2019-08-06 15:50:57.727 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434718" started.
+2019-08-06 15:50:57.781 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434717" received FIN.
+2019-08-06 15:50:57.781 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434718" received FIN.
+2019-08-06 15:50:57.786 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434719" started.
+2019-08-06 15:50:57.842 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:50:57.842 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:50:57.897 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434718" sending FIN because: "The client closed the connection."
+2019-08-06 15:50:57.897 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434717" sending FIN because: "The client closed the connection."
+2019-08-06 15:50:57.908 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434718" disconnecting.
+2019-08-06 15:50:57.908 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434717" disconnecting.
+2019-08-06 15:50:57.974 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434718" stopped.
+2019-08-06 15:50:57.974 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV434717" stopped.
+2019-08-06 15:50:57.991 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger  
+2019-08-06 15:50:57.992 -05:00 [Debug] [markgravessmbp] [0HLOQLV434719:00000001] Wildcard detected, all requests with hosts will be allowed.
+2019-08-06 15:50:57.993 -05:00 [Verbose] [markgravessmbp] [0HLOQLV434719:00000001] All hosts are allowed.
+2019-08-06 15:50:58.029 -05:00 [Debug] [markgravessmbp] [0HLOQLV434719:00000001] Connection id "0HLOQLV434719" completed keep alive response.
+2019-08-06 15:50:58.029 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000001] Request finished in 38.9829ms 302 
+2019-08-06 15:50:58.035 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/index.html  
+2019-08-06 15:50:58.035 -05:00 [Verbose] [markgravessmbp] [0HLOQLV434719:00000002] All hosts are allowed.
+2019-08-06 15:50:58.135 -05:00 [Debug] [markgravessmbp] [0HLOQLV434719:00000002] Connection id "0HLOQLV434719" completed keep alive response.
+2019-08-06 15:50:58.135 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000002] Request finished in 99.9194ms 200 text/html; charset=utf-8
+2019-08-06 15:50:58.143 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000003] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui.css  
+2019-08-06 15:50:58.143 -05:00 [Verbose] [markgravessmbp] [0HLOQLV434719:00000003] All hosts are allowed.
+2019-08-06 15:50:58.144 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471A" started.
+2019-08-06 15:50:58.146 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471B" started.
+2019-08-06 15:50:58.164 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471A" received FIN.
+2019-08-06 15:50:58.165 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471C" started.
+2019-08-06 15:50:58.164 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:50:58.167 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471A" sending FIN because: "The client closed the connection."
+2019-08-06 15:50:58.168 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471A" disconnecting.
+2019-08-06 15:50:58.168 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471A" stopped.
+2019-08-06 15:50:58.172 -05:00 [Verbose] [markgravessmbp] [0HLOQLV434719:00000003] Range header's value is empty.
+2019-08-06 15:50:58.179 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471B" received FIN.
+2019-08-06 15:50:58.179 -05:00 [Debug] [markgravessmbp] [] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception. ---> Interop+AppleCrypto+SslException: unknown certificate
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslState.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-08-06 15:50:58.180 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471D" started.
+2019-08-06 15:50:58.180 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471B" sending FIN because: "The client closed the connection."
+2019-08-06 15:50:58.181 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471B" disconnecting.
+2019-08-06 15:50:58.207 -05:00 [Debug] [markgravessmbp] [] Connection id "0HLOQLV43471B" stopped.
+2019-08-06 15:50:58.255 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-bundle.js  
+2019-08-06 15:50:58.281 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000001] All hosts are allowed.
+2019-08-06 15:50:58.281 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000001] Range header's value is empty.
+2019-08-06 15:50:58.329 -05:00 [Information] [markgravessmbp] [0HLOQLV43471D:00000001] Request starting HTTP/1.1 GET https://localhost:5002/swagger/swagger-ui-standalone-preset.js  
+2019-08-06 15:50:58.329 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471D:00000001] All hosts are allowed.
+2019-08-06 15:50:58.329 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471D:00000001] Range header's value is empty.
+2019-08-06 15:50:58.361 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000003] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2019-08-06 15:50:58.361 -05:00 [Information] [markgravessmbp] [0HLOQLV43471D:00000001] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2019-08-06 15:50:58.361 -05:00 [Debug] [markgravessmbp] [0HLOQLV434719:00000003] Connection id "0HLOQLV434719" completed keep alive response.
+2019-08-06 15:50:58.361 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471D:00000001] Connection id "0HLOQLV43471D" completed keep alive response.
+2019-08-06 15:50:58.361 -05:00 [Information] [markgravessmbp] [0HLOQLV434719:00000003] Request finished in 218.6653ms 200 text/css
+2019-08-06 15:50:58.361 -05:00 [Information] [markgravessmbp] [0HLOQLV43471D:00000001] Request finished in 55.3386ms 200 application/javascript
+2019-08-06 15:50:58.393 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000001] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2019-08-06 15:50:58.393 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000001] Connection id "0HLOQLV43471C" completed keep alive response.
+2019-08-06 15:50:58.393 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000001] Request finished in 159.7154ms 200 application/javascript
+2019-08-06 15:50:58.626 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000002] Request starting HTTP/1.1 GET https://localhost:5002/swagger/v1/swagger.json  
+2019-08-06 15:50:58.626 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000002] All hosts are allowed.
+2019-08-06 15:50:58.627 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000002] The request path /v1/swagger.json does not match an existing file
+2019-08-06 15:50:58.628 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000002] The request path /swagger/v1/swagger.json does not match an existing file
+2019-08-06 15:50:59.296 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000002] Connection id "0HLOQLV43471C" completed keep alive response.
+2019-08-06 15:50:59.298 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000002] Request finished in 696.7609ms 200 application/json; charset=utf-8
+2019-08-06 15:51:04.529 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Request starting HTTP/1.1 GET https://localhost:5002/api/AppConfig  
+2019-08-06 15:51:04.529 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] All hosts are allowed.
+2019-08-06 15:51:04.529 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] The request path  does not match the path filter
+2019-08-06 15:51:04.529 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] The request path /api/AppConfig does not match a supported file type
+2019-08-06 15:51:04.560 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Request successfully matched the route with name 'null' and template 'api/AppConfig'
+2019-08-06 15:51:04.588 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Route matched with {action = "Get", controller = "AppConfig"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller check_yo_self_indexer.Server.Controllers.api.AppConfigController (check-yo-self-indexer).
+2019-08-06 15:51:04.589 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"]
+2019-08-06 15:51:04.589 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:51:04.589 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","check_yo_self_indexer.Server.Filters.ModelValidationFilter","Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter"]
+2019-08-06 15:51:04.589 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Execution plan of exception filters (in the following order): ["check_yo_self_indexer.Server.Filters.ApiExceptionFilter (Order: 0)"]
+2019-08-06 15:51:04.589 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-08-06 15:51:04.591 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Authorization Filter: Before executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:51:04.595 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Authorization Filter: After executing OnAuthorizationAsync on filter Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter.
+2019-08-06 15:51:04.595 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.596 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.605 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:51:04.608 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:51:04.608 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:51:04.608 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:51:04.609 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuting on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:51:04.609 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:51:04.609 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:51:04.613 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Executing action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer) - Validation state: "Valid"
+2019-08-06 15:51:04.615 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Executed action method check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.2366ms.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Internal.ResponseCacheFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuted on filter check_yo_self_indexer.Server.Filters.ModelValidationFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2019-08-06 15:51:04.616 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2019-08-06 15:51:04.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.618 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.620 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2019-08-06 15:51:04.621 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2019-08-06 15:51:04.624 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Attempting to select an output formatter based on Accept header '["application/json"]'.
+2019-08-06 15:51:04.625 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2019-08-06 15:51:04.625 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Executing ObjectResult, writing value of type 'check_yo_self_indexer.Entities.Config.AppConfig'.
+2019-08-06 15:51:04.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2019-08-06 15:51:04.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.632 -05:00 [Verbose] [markgravessmbp] [0HLOQLV43471C:00000003] Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2019-08-06 15:51:04.635 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Executed action check_yo_self_indexer.Server.Controllers.api.AppConfigController.Get (check-yo-self-indexer) in 43.2447ms
+2019-08-06 15:51:04.635 -05:00 [Debug] [markgravessmbp] [0HLOQLV43471C:00000003] Connection id "0HLOQLV43471C" completed keep alive response.
+2019-08-06 15:51:04.635 -05:00 [Information] [markgravessmbp] [0HLOQLV43471C:00000003] Request finished in 106.3831ms 200 application/json; charset=utf-8

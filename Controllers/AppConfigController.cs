@@ -8,7 +8,7 @@ using NSwag.Annotations;
 namespace check_yo_self_indexer.Server.Controllers.api
 {
     [Route("api/[controller]")]
-    [OpenApiIgnore]
+    // [OpenApiIgnore]
     [AllowAnonymous]
     public class AppConfigController : BaseController
     {
