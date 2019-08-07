@@ -1,6 +1,6 @@
 using System;
 
-namespace check_yo_self_indexer.Server.Entities.Config
+namespace check_yo_self_indexer.Entities.Config
 {
     public class ConfigurationServer
     {

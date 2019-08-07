@@ -1,5 +1,3 @@
-using check_yo_self_indexer.Server.Entities.Config;
-
 namespace check_yo_self_indexer.Entities.Config
 {
     public class AppConfig
@@ -7,7 +5,7 @@ namespace check_yo_self_indexer.Entities.Config
         public AppConfig()
         {
         }
-        
+
         private string _baseUri;
         private string _baseUriService;
 
@@ -25,5 +23,6 @@ namespace check_yo_self_indexer.Entities.Config
         }
         public string Version { get; set; }
         public ConfigurationServer ConfigurationServer { get; set; }
+        public Elasticsearch Elasticsearch { get; set; }
     }
 }
