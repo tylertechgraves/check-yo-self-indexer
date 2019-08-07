@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    ports:
+      - 9200:9200
+    environment:
+      - ELASTIC_PASSWORD=ElasticAdmin1
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+
+networks:
+  default:
+    name: platform

@@ -15,7 +15,6 @@ using NSwag.Annotations;
 namespace check_yo_self_indexer.Server.Controllers.api
 {
     [Route("api/[controller]")]
-    [OpenApiIgnore]
     [AllowAnonymous]
     public class EmployeeIndexerController : BaseController
     {

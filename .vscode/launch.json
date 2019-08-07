@@ -34,23 +34,6 @@
             "sourceFileMap": {
                 "/Views": "${workspaceRoot}/check-yo-self-indexer/Views"
             }
-        },
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/check-yo-self-indexer/bin/Debug/netcoreapp2.2/check-yo-self-indexer.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}/check-yo-self-indexer",
-            "stopAtEntry": false,
-            "console": "internalConsole"
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
         }
     ]
 }
