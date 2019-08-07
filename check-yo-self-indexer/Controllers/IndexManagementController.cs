@@ -43,9 +43,9 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             try
             {
-                var indexExists = _elasticClient.Indices.Exists(_appConfig.Elasticsearch.IndexName).Exists;
+                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
-                if (indexExists)
+                if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
                 {
                     throw new Exception("Index of name " + _appConfig.Elasticsearch.IndexName + " already exists");
                 }
@@ -80,9 +80,9 @@ namespace check_yo_self_indexer.Server.Controllers.api
                 _logger.LogInformation("Username: " + _appConfig.Elasticsearch.Username);
                 _logger.LogInformation("Password: " + _appConfig.Elasticsearch.Password);
 
-                var indexExists = _elasticClient.Indices.Exists(_appConfig.Elasticsearch.IndexName).Exists;
+                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
-                if (!indexExists)
+                if (indexExistsResponse.IsValid && !indexExistsResponse.Exists)
                 {
                     _logger.LogInformation("Index DOES NOT exist.  Creating index...");
 
@@ -96,7 +96,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
                 }
                 else
                 {
-                    if (indexExists)
+                    if (indexExistsResponse.Exists)
                         _logger.LogInformation("Index already exists.  Skipping index creation...");
                 }
 									
@@ -119,9 +119,9 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             try
             {
-				var indexExists = _elasticClient.Indices.Exists(_appConfig.Elasticsearch.IndexName).Exists;
+				ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
-                if (indexExists)
+                if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
                 {
                     return Ok(indexName);
                 }
@@ -142,9 +142,9 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             try
             {
-				var indexExists = _elasticClient.Indices.Exists(_appConfig.Elasticsearch.IndexName).Exists;
+				ExistsResponse indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
-                if (indexExists)
+                if (indexExistsReponse.IsValid && indexExistsReponse.Exists)
                 {
                     DeleteIndexResponse deleteIndexResult = await _elasticClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
                     if (!deleteIndexResult.IsValid)
