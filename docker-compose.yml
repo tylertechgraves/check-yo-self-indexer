@@ -1,13 +1,25 @@
-version: '3.5'
+version: '3.6'
 services:
   
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.0
     ports:
       - 9200:9200
+      - 9300:9300
     environment:
       - ELASTIC_PASSWORD=ElasticAdmin1
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - discovery.type=single-node
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.3.0
+    ports:
+      - 5601:5601
+    depends_on: 
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - ELASTIC_PASSWORD=ElasticAdmin1
 
 networks:
   default:

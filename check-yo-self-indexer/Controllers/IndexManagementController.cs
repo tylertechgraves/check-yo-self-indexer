@@ -19,7 +19,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
         private readonly AppConfig _appConfig;
         private IElasticClient _elasticClient;
 
-        public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory) 
+        public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<IndexManagementController>();
             _appConfig = appConfig.Value;
@@ -33,7 +33,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
                 elasticSettings.BasicAuthentication(_appConfig.Elasticsearch.Username, _appConfig.Elasticsearch.Password);
             }
             else
-              _logger.LogDebug("We skipped basic auth");
+                _logger.LogDebug("We skipped basic auth");
 
             _elasticClient = new ElasticClient(elasticSettings);
         }
@@ -57,8 +57,8 @@ namespace check_yo_self_indexer.Server.Controllers.api
                     _logger.LogError("Error creating index: " + response.DebugInformation);
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
-									
-				return Ok();
+
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -82,7 +82,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
 
                 ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
-                if (indexExistsResponse.IsValid && !indexExistsResponse.Exists)
+                if (!indexExistsResponse.Exists)
                 {
                     _logger.LogInformation("Index DOES NOT exist.  Creating index...");
 
@@ -99,8 +99,8 @@ namespace check_yo_self_indexer.Server.Controllers.api
                     if (indexExistsResponse.Exists)
                         _logger.LogInformation("Index already exists.  Skipping index creation...");
                 }
-									
-				return Ok();
+
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             try
             {
-				ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
                 if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
                 {
@@ -132,7 +132,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
             }
             catch (Exception ex)
             {
-                _logger.LogError(1, ex, "Unable to determine if index " + indexName  + "exists");
+                _logger.LogError(1, ex, "Unable to determine if index " + indexName + "exists");
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -142,7 +142,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             try
             {
-				ExistsResponse indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+                ExistsResponse indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
                 if (indexExistsReponse.IsValid && indexExistsReponse.Exists)
                 {
@@ -152,8 +152,8 @@ namespace check_yo_self_indexer.Server.Controllers.api
                         throw new Exception("Could not delete Employees index");
                     }
                 }
-									
-				return Ok();
+
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -166,28 +166,30 @@ namespace check_yo_self_indexer.Server.Controllers.api
         {
             var response = await _elasticClient.Indices.CreateAsync(_appConfig.Elasticsearch.IndexName, c => c
                 .Settings(s => s
-                    .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
-                    .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
+                  .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
+                  .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
                 )
                 .Map<Employee>(e => e
+                  .AutoMap()
+                  .Dynamic(DynamicMapping.Strict)
                   .Properties(ps => ps
-                    .Number(nu => nu
-                        .Name(n => n.EmployeeId)
+                    .Keyword(k => k
+                      .Name(n => n.EmployeeId)
                     )
-                    .Text(t => t
-                        .Name(n => n.FirstName)
+                    .Keyword(k => k
+                      .Name(n => n.LastName)
                     )
-                    .Text(t => t
-                        .Name(n => n.LastName)
+                    .Keyword(k => k
+                      .Name(n => n.FirstName)
                     )
-                    .Date(d => d
-                        .Name(n => n.FirstPaycheckDate)
+                    .Keyword(k => k
+                      .Name(n => n.FirstPaycheckDate)
                     )
-                    .Number(nu => nu
-                        .Name(n => n.Salary)
+                    .Keyword(k => k
+                      .Name(n => n.Salary)
                     )
-                  )
                 )
+              )
             );
 
             return response;
