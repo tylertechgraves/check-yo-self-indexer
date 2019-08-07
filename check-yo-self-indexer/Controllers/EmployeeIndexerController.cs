@@ -42,14 +42,14 @@ namespace check_yo_self_indexer.Server.Controllers.api
         }
 
         [HttpPost]
-		[Route("PetRegistrations")]
+		[Route("Employees")]
         public async Task<IActionResult> BulkPost([FromBody]IEnumerable<Employee> registrations)
         {
             try
             {
 				if (registrations.Count() > _appConfig.Elasticsearch.MaxBulkInsertCount)
 				{
-					throw new Exception($"Number of pet registrations exceeds the max allowed bulk index count of {_appConfig.Elasticsearch.MaxBulkInsertCount}");
+					throw new Exception($"Number of employees exceeds the max allowed bulk index count of {_appConfig.Elasticsearch.MaxBulkInsertCount}");
 				}
 
                 BulkResponse response = await _elasticClient.IndexManyAsync(registrations, _appConfig.Elasticsearch.IndexName);
@@ -64,7 +64,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
             }
             catch (Exception ex)
             {
-                _logger.LogError(1, ex, "Unable to index Pet Registration entity collection");
+                _logger.LogError(1, ex, "Unable to index employees entity collection");
                 return BadRequest();
             }
 
