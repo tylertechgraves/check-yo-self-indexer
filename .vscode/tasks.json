@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/check-yo-self-indexer.csproj",
+                "${workspaceFolder}/check-yo-self-indexer/check-yo-self-indexer.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/check-yo-self-indexer.csproj",
+                "${workspaceFolder}/check-yo-self-indexer/check-yo-self-indexer.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/check-yo-self-indexer.csproj",
+                "${workspaceFolder}/check-yo-self-indexer/check-yo-self-indexer.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

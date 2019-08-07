@@ -6,13 +6,13 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.2/check-yo-self-indexer.dll",
+            "program": "${workspaceRoot}/check-yo-self-indexer/bin/Debug/netcoreapp2.2/check-yo-self-indexer.dll",
             "args": [
                 // "dropdb",
                 // "migratedb",
                 // "seeddb"
             ],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/check-yo-self-indexer",
             "stopAtEntry": false,
             "launchBrowser": {
                 "enabled": true,
@@ -32,7 +32,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceRoot}/Views"
+                "/Views": "${workspaceRoot}/check-yo-self-indexer/Views"
             }
         },
         {
@@ -40,9 +40,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp2.2/check-yo-self-indexer.dll",
+            "program": "${workspaceRoot}/check-yo-self-indexer/bin/Debug/netcoreapp2.2/check-yo-self-indexer.dll",
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/check-yo-self-indexer",
             "stopAtEntry": false,
             "console": "internalConsole"
         },
