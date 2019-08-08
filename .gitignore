@@ -481,3 +481,4 @@ MigrationBackup/
 
 /check-yo-self-indexer/logs/*
 *.log
+**/logs
