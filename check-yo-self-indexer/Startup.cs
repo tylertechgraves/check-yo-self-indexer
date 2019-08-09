@@ -1,4 +1,5 @@
 ﻿using check_yo_self_indexer.Entities.Config;
+using check_yo_self_indexer.Entities.Startup;
 using check_yo_self_indexer.Server;
 using check_yo_self_indexer.Server.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +38,10 @@ namespace check_yo_self_indexer
                       .AllowAnyHeader()
                       .AllowAnyMethod()
                       .AllowCredentials());
+                })
+                .AddResponseCompression(options =>
+                {
+                    options.MimeTypes = DefaultMimeTypes.Get;
                 })
                 .AddMemoryCache()
                 .RegisterCustomServices()
