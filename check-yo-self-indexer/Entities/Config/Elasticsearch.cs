@@ -1,4 +1,3 @@
-using check_yo_self_indexer.Entities;
 using Newtonsoft.Json;
 
 namespace check_yo_self_indexer.Entities.Config
