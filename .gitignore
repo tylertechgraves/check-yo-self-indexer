@@ -482,3 +482,4 @@ MigrationBackup/
 /check-yo-self-indexer/logs/*
 *.log
 **/logs
+/check-yo-self-indexer-SDK/out
