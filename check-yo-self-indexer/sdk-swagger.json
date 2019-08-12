@@ -4,5 +4,191 @@
   "info": {
     "title": "check-yo-self-indexer",
     "version": "1.0.0"
+  },
+  "paths": {
+    "/api/Employees": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_BulkPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "employees",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "400": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Employees/{employeeId}": {
+      "delete": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_Delete",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/IndexManagement": {
+      "post": {
+        "tags": [
+          "IndexManagement"
+        ],
+        "operationId": "IndexManagement_Post",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "IndexManagement"
+        ],
+        "operationId": "IndexManagement_Delete",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/IndexManagement/CreateIndexIfNoneExists": {
+      "post": {
+        "tags": [
+          "IndexManagement"
+        ],
+        "operationId": "IndexManagement_AnonymousPost",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/IndexManagement/{indexName}": {
+      "get": {
+        "tags": [
+          "IndexManagement"
+        ],
+        "operationId": "IndexManagement_Get",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "indexName",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Employee": {
+      "type": "object",
+      "required": [
+        "employeeId",
+        "salary",
+        "firstPaycheckDate"
+      ],
+      "properties": {
+        "employeeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "salary": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "firstPaycheckDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
   }
 }
