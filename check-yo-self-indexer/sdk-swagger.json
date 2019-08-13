@@ -97,11 +97,13 @@
         "operationId": "IndexManagement_Delete",
         "responses": {
           "200": {
-            "x-nullable": true,
-            "description": "",
-            "schema": {
-              "type": "file"
-            }
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          },
+          "400": {
+            "description": ""
           }
         }
       }

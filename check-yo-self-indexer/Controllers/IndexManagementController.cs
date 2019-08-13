@@ -138,6 +138,9 @@ namespace check_yo_self_indexer.Server.Controllers.api
         }
 
         [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete()
         {
             try
@@ -149,7 +152,8 @@ namespace check_yo_self_indexer.Server.Controllers.api
                     DeleteIndexResponse deleteIndexResult = await _elasticClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
                     if (!deleteIndexResult.IsValid)
                     {
-                        throw new Exception("Could not delete Employees index");
+                        _logger.LogError("Unable to delete employee index");
+                        return StatusCode(StatusCodes.Status500InternalServerError);
                     }
                 }
 
