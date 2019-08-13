@@ -7,6 +7,32 @@
   },
   "paths": {
     "/api/Employees": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_GetAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      },
       "post": {
         "tags": [
           "Employees"
@@ -46,6 +72,42 @@
       }
     },
     "/api/Employees/{employeeId}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_GetById",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "employeeId",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Employees"
@@ -69,6 +131,93 @@
             "description": ""
           },
           "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Employees/Last/{lastName}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_GetByLastName",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "lastName",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Employees/FirstLast/{firstName}/{lastName}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "operationId": "Employees_GetByFirstAndLastName",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "firstName",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "lastName",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          },
+          "500": {
+            "description": ""
+          },
+          "404": {
             "description": ""
           }
         }

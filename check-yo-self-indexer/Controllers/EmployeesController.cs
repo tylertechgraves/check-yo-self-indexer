@@ -110,7 +110,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
             }
         }
 
-        [HttpGet("{lastName}")]
+        [HttpGet("Last/{lastName}")]
         [ProducesResponseType(typeof(List<Employee>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -148,7 +148,7 @@ namespace check_yo_self_indexer.Server.Controllers.api
             }
         }
 
-        [HttpGet("{firstName}/{lastName}")]
+        [HttpGet("FirstLast/{firstName}/{lastName}")]
         [ProducesResponseType(typeof(List<Employee>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
