@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "check-yo-self-api-sdk", "check-yo-self-indexer-SDK\check-yo-self-api-sdk.csproj", "{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "check-yo-self-indexer", "check-yo-self-indexer\check-yo-self-indexer.csproj", "{16395F40-B5B9-43C5-93E5-36CF15BA6426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "check-yo-self-indexer-sdk", "check-yo-self-indexer-SDK\check-yo-self-indexer-sdk.csproj", "{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|x64.Build.0 = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Debug|x86.Build.0 = Debug|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|x64.ActiveCfg = Release|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|x64.Build.0 = Release|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|x86.ActiveCfg = Release|Any CPU
-		{470F1ED2-0692-4586-A9BF-5E7BEF09FC15}.Release|x86.Build.0 = Release|Any CPU
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -44,5 +32,17 @@ Global
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Release|x64.Build.0 = Release|Any CPU
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Release|x86.ActiveCfg = Release|Any CPU
 		{16395F40-B5B9-43C5-93E5-36CF15BA6426}.Release|x86.Build.0 = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|x64.Build.0 = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Debug|x86.Build.0 = Debug|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|x64.ActiveCfg = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|x64.Build.0 = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|x86.ActiveCfg = Release|Any CPU
+		{B667DF0C-CE0E-4ED8-B7A6-25EB33EFDD20}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
