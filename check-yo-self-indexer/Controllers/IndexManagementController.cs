@@ -172,6 +172,10 @@ namespace check_yo_self_indexer.Server.Controllers.api
                 .Settings(s => s
                   .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
                   .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
+                  .Analysis(a => a
+                    .Normalizers(n => n
+                        .Custom("lowerCaseNormalizer", cu => cu
+                            .Filters(new string[]{"lowercase"}))))
                 )
                 .Map<Employee>(e => e
                   .AutoMap()
@@ -182,9 +186,11 @@ namespace check_yo_self_indexer.Server.Controllers.api
                     )
                     .Keyword(k => k
                       .Name(n => n.LastName)
+                      .Normalizer("lowerCaseNormalizer")
                     )
                     .Keyword(k => k
                       .Name(n => n.FirstName)
+                      .Normalizer("lowerCaseNormalizer")
                     )
                     .Keyword(k => k
                       .Name(n => n.FirstPaycheckDate)
