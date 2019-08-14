@@ -10,6 +10,8 @@ services:
       - ELASTIC_PASSWORD=ElasticAdmin1
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - discovery.type=single-node
+    volumes:
+      - ./elasticsearchData:/usr/share/elasticsearch/data
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.3.0
@@ -20,6 +22,22 @@ services:
     environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
       - ELASTIC_PASSWORD=ElasticAdmin1
+
+  db:
+    image: mariadb:10.4.7
+    restart: always
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=checkyoself
+    ports: 
+      - 3306:3306
+
+  adminer:
+    image: adminer:4.7.2
+    restart: always
+    ports:
+      - 8080:8080
 
 networks:
   default:

@@ -483,3 +483,4 @@ MigrationBackup/
 *.log
 **/logs
 /check-yo-self-indexer-SDK/out
+/elasticsearchData
