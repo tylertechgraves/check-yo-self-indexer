@@ -32,6 +32,8 @@ services:
       - MYSQL_ROOT_PASSWORD=checkyoself
     ports: 
       - 3306:3306
+    volumes:
+      - ./mySqlData:/var/lib/mysql
 
   adminer:
     image: adminer:4.7.2
