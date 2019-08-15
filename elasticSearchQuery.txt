@@ -1,0 +1,12 @@
+GET employees/_search
+{
+  "size": 50,
+  "sort" : [
+      { "lastName" : "asc" },
+      { "firstName" : "asc" },
+      { "employeeId": "asc" }
+  ],
+  "query": {  
+    "match_all": {}
+  }
+}
