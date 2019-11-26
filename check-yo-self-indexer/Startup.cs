@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace check_yo_self_indexer
@@ -15,7 +16,7 @@ namespace check_yo_self_indexer
     {
         static string title = "check-yo-self-indexer";
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env, ILogger<Startup> logger)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             Configuration = configuration;
             _env = env;
@@ -23,7 +24,7 @@ namespace check_yo_self_indexer
         }
 
         public IConfiguration Configuration { get; }
-        private IHostingEnvironment _env { get; set; }
+        private IWebHostEnvironment _env { get; set; }
         private readonly ILogger<Startup> _logger;
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,8 +37,7 @@ namespace check_yo_self_indexer
                     options.AddPolicy("AllowAll",
                     builder => builder.AllowAnyOrigin()
                       .AllowAnyHeader()
-                      .AllowAnyMethod()
-                      .AllowCredentials());
+                      .AllowAnyMethod());
                 })
                 .AddResponseCompression(options =>
                 {
@@ -50,13 +50,13 @@ namespace check_yo_self_indexer
                 .AddSwaggerDocument(config => {
                     config.Title = title;
                 })
-                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
-                .AddNodeServices();
+                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
                 // .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -73,16 +73,27 @@ namespace check_yo_self_indexer
             app.UseXsrf()
                .UseCors("AllowAll")
                .UseStaticFiles()
+               .UseRouting()
+               .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+                    // default route for MVC/API controllers
+                    // endpoints.MapRoute(
+                    //     name: "default",
+                    //     template: "{controller=Home}/{action=Index}/{id?}");
+
+                    // // fallback route for anything that does not match an MVC/API controller
+                    // // this will load the angular app and allow for the angular routes to work.
+                    // routes.MapSpaFallbackRoute(
+                    //     name: "spa-fallback",
+                    //     defaults: new { controller = "Home", action = "Index" });
+                })
                .UseAuthentication()
                // Enable middleware to serve generated Swagger as a JSON endpoint
-               .UseOpenApi()
-               .UseMvc(routes =>
-                {
-                    // default route for MVC/API controllers
-                    routes.MapRoute(
-                        name: "default",
-                        template: "{controller=Home}/{action=Index}/{id?}");
-                });
+               .UseOpenApi();
 
             
             IHttpContextAccessor httpContextAccessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
