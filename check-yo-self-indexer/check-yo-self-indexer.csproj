@@ -26,7 +26,7 @@
   <Target Name="NSwag" AfterTargets="Publish">
     <Copy SourceFiles="@(ReferencePath)" DestinationFolder="$(OutDir)References" />
     <Exec Command="echo $(Configuration)" />
-    <Exec Command="$(NSwagExe_Core30) run sdk.nswag /variables:configuration=$(Configuration)" />
+    <Exec Command="$(NSwagExe_Core31) run sdk.nswag /variables:configuration=$(Configuration)" />
     <RemoveDir Directories="$(OutDir)References" />
   </Target>
 
