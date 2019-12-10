@@ -74,6 +74,7 @@ namespace check_yo_self_indexer
                .UseCors("AllowAll")
                .UseStaticFiles()
                .UseRouting()
+               .UseAuthorization()
                .UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllerRoute(
@@ -93,7 +94,8 @@ namespace check_yo_self_indexer
                 })
                .UseAuthentication()
                // Enable middleware to serve generated Swagger as a JSON endpoint
-               .UseOpenApi();
+               .UseOpenApi()
+               .UseSwaggerUi3();;
 
             
             IHttpContextAccessor httpContextAccessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
