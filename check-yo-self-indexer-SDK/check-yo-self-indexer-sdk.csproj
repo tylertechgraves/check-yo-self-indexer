@@ -2,12 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <NuspecFile>.\nupkg\check-yo-self-indexer-sdk.nuspec</NuspecFile>
-    <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
+    <PackageId>check-yo-self-indexer-sdk</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Title>SDK for check-yo-self-indexer in .NET Standard</Title>    
+    <Authors>Mark Graves</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>SDK for check-yo-self-indexer in .NET Standard NuGet Package</Description>
+    <Copyright>Copyright © 2018 Mark Graves. All Rights Reserved Worldwide.</Copyright>
+    <PackageTags>check-yo-self-indexer SDK API dotnet Core Standard Types .NET</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>
