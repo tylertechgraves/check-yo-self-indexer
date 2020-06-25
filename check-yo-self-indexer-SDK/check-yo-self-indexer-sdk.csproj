@@ -8,7 +8,7 @@
     <Authors>Mark Graves</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>SDK for check-yo-self-indexer in .NET Standard NuGet Package</Description>
-    <Copyright>Copyright © 2018 Mark Graves. All Rights Reserved Worldwide.</Copyright>
+    <Copyright>Please see MIT license provided by GitHub</Copyright>
     <PackageTags>check-yo-self-indexer SDK API dotnet Core Standard Types .NET</PackageTags>
   </PropertyGroup>
 
