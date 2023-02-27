@@ -485,3 +485,5 @@ MigrationBackup/
 /check-yo-self-indexer-SDK/out
 
 .DS_store
+
+/check-yo-self-indexer-SDK/check-yo-self-indexer-client.cs
