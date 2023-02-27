@@ -50,7 +50,8 @@ namespace check_yo_self_indexer
                 .AddSwaggerDocument(config => {
                     config.Title = title;
                 })
-                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+                .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
+                .AddHealthChecks();
 
                 // .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -77,20 +78,12 @@ namespace check_yo_self_indexer
                .UseAuthorization()
                .UseEndpoints(endpoints =>
                 {
-                    endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Home}/{action=Index}/{id?}"
-                    );
-                    // default route for MVC/API controllers
-                    // endpoints.MapRoute(
-                    //     name: "default",
-                    //     template: "{controller=Home}/{action=Index}/{id?}");
+                    endpoints.MapControllers();
 
-                    // // fallback route for anything that does not match an MVC/API controller
-                    // // this will load the angular app and allow for the angular routes to work.
-                    // routes.MapSpaFallbackRoute(
-                    //     name: "spa-fallback",
-                    //     defaults: new { controller = "Home", action = "Index" });
+                    // add fallback for api routes
+                    endpoints.Map("/api/{**route}", request => { request.Response.StatusCode = 404; return System.Threading.Tasks.Task.CompletedTask; });
+
+                    endpoints.MapHealthChecks("/health");
                 })
                .UseAuthentication()
                // Enable middleware to serve generated Swagger as a JSON endpoint

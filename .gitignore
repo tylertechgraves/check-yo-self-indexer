@@ -483,3 +483,5 @@ MigrationBackup/
 *.log
 **/logs
 /check-yo-self-indexer-SDK/out
+
+.DS_store

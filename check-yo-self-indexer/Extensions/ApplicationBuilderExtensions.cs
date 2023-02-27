@@ -29,7 +29,7 @@ namespace check_yo_self_indexer.Server.Extensions
         public static IApplicationBuilder AddDevMiddlewares(this IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
-            app.UseDatabaseErrorPage();
+            app.UseMigrationsEndPoint();
             return app;
         }
     }
