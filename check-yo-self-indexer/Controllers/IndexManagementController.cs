@@ -9,200 +9,199 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Nest;
 
-namespace check_yo_self_indexer.Server.Controllers.api
+namespace check_yo_self_indexer.Server.Controllers.api;
+
+[Route("api/[controller]")]
+[AllowAnonymous]
+public class IndexManagementController : BaseController
 {
-    [Route("api/[controller]")]
-    [AllowAnonymous]
-    public class IndexManagementController : BaseController
+    private readonly ILogger _logger;
+    private readonly AppConfig _appConfig;
+    private readonly IElasticClient _elasticClient;
+
+    public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory)
     {
-        private readonly ILogger _logger;
-        private readonly AppConfig _appConfig;
-        private IElasticClient _elasticClient;
+        _logger = loggerFactory.CreateLogger<IndexManagementController>();
+        _appConfig = appConfig.Value;
 
-        public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory)
+        var node = new Uri(_appConfig.Elasticsearch.Uri);
+        var elasticSettings = new ConnectionSettings(node);
+
+        if (_appConfig.Elasticsearch.UseAuthentication)
         {
-            _logger = loggerFactory.CreateLogger<IndexManagementController>();
-            _appConfig = appConfig.Value;
+            _logger.LogDebug("We did not skip basic auth");
+            elasticSettings.BasicAuthentication(_appConfig.Elasticsearch.Username, _appConfig.Elasticsearch.Password);
+        }
+        else
+            _logger.LogDebug("We skipped basic auth");
 
-            var node = new Uri(_appConfig.Elasticsearch.Uri);
-            var elasticSettings = new ConnectionSettings(node);
+        _elasticClient = new ElasticClient(elasticSettings);
+    }
 
-            if (_appConfig.Elasticsearch.UseAuthentication)
+    [HttpPost]
+    public async Task<IActionResult> Post()
+    {
+        try
+        {
+            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+
+            if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
             {
-                _logger.LogDebug("We did not skip basic auth");
-                elasticSettings.BasicAuthentication(_appConfig.Elasticsearch.Username, _appConfig.Elasticsearch.Password);
+                throw new Exception("Index of name " + _appConfig.Elasticsearch.IndexName + " already exists");
             }
-            else
-                _logger.LogDebug("We skipped basic auth");
 
-            _elasticClient = new ElasticClient(elasticSettings);
+            var response = await CreateIndex();
+
+            if (!response.IsValid)
+            {
+                _logger.LogError("Error creating index: {debugInfo}", response.DebugInformation);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(1, ex, "Unable to create Employees index; index already exists");
+            return BadRequest();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post()
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    [Route("CreateIndexIfNoneExists")]
+    public async Task<IActionResult> AnonymousPost()
+    {
+        try
         {
-            try
+            _logger.LogInformation("Uri: {uri}", _appConfig.Elasticsearch.Uri);
+            _logger.LogInformation("IndexName: {indexName}", _appConfig.Elasticsearch.IndexName);
+            _logger.LogInformation("Username: {username}", _appConfig.Elasticsearch.Username);
+            _logger.LogInformation("Password: {password}", _appConfig.Elasticsearch.Password);
+
+            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+
+            if (!indexExistsResponse.Exists)
             {
-                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+                _logger.LogInformation("Index DOES NOT exist.  Creating index...");
 
-                if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
-                {
-                    throw new Exception("Index of name " + _appConfig.Elasticsearch.IndexName + " already exists");
-                }
-
-                CreateIndexResponse response = await CreateIndex();
+                var response = await CreateIndex();
 
                 if (!response.IsValid)
                 {
-                    _logger.LogError("Error creating index: " + response.DebugInformation);
+                    _logger.LogError("Error creating index: {debufInfo}", response.DebugInformation);
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
-
-                return Ok();
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError(1, ex, "Unable to create Employees index; index already exists");
-                return BadRequest();
+                if (indexExistsResponse.Exists)
+                    _logger.LogInformation("Index already exists.  Skipping index creation...");
             }
 
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(1, ex, "Unable to create Employees index");
+            return StatusCode(StatusCodes.Status500InternalServerError);
         }
 
-        [HttpPost]
-        [AllowAnonymous]
-        [Route("CreateIndexIfNoneExists")]
-        public async Task<IActionResult> AnonymousPost()
+    }
+
+    [HttpGet]
+    [Route("{indexName}")]
+    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> Get(string indexName)
+    {
+        try
         {
-            try
+            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+
+            if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
             {
-                _logger.LogInformation("Uri: " + _appConfig.Elasticsearch.Uri);
-                _logger.LogInformation("IndexName: " + _appConfig.Elasticsearch.IndexName);
-                _logger.LogInformation("Username: " + _appConfig.Elasticsearch.Username);
-                _logger.LogInformation("Password: " + _appConfig.Elasticsearch.Password);
-
-                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
-
-                if (!indexExistsResponse.Exists)
-                {
-                    _logger.LogInformation("Index DOES NOT exist.  Creating index...");
-
-                    CreateIndexResponse response = await CreateIndex();
-
-                    if (!response.IsValid)
-                    {
-                        _logger.LogError("Error creating index: " + response.DebugInformation);
-                        return StatusCode(StatusCodes.Status500InternalServerError);
-                    }
-                }
-                else
-                {
-                    if (indexExistsResponse.Exists)
-                        _logger.LogInformation("Index already exists.  Skipping index creation...");
-                }
-
-                return Ok();
+                return Ok(indexName);
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError(1, ex, "Unable to create Employees index");
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-
-        }
-
-        [HttpGet]
-        [Route("{indexName}")]
-        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get(string indexName)
-        {
-            try
-            {
-                ExistsResponse indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
-
-                if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
-                {
-                    return Ok(indexName);
-                }
-                else
-                {
-                    return NotFound();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(1, ex, "Unable to determine if index " + indexName + "exists");
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return NotFound();
             }
         }
-
-        [HttpDelete]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Delete()
+        catch (Exception ex)
         {
-            try
-            {
-                ExistsResponse indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
-
-                if (indexExistsReponse.IsValid && indexExistsReponse.Exists)
-                {
-                    DeleteIndexResponse deleteIndexResult = await _elasticClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
-                    if (!deleteIndexResult.IsValid)
-                    {
-                        _logger.LogError("Unable to delete employee index");
-                        return StatusCode(StatusCodes.Status500InternalServerError);
-                    }
-                }
-
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(1, ex, "Unable to delete Employees index; does not exists");
-                return BadRequest();
-            }
+            _logger.LogError(ex, "Unable to determine if index {indexName} exists", indexName);
+            return StatusCode(StatusCodes.Status500InternalServerError);
         }
+    }
 
-        private async Task<CreateIndexResponse> CreateIndex()
+    [HttpDelete]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> Delete()
+    {
+        try
         {
-            var response = await _elasticClient.Indices.CreateAsync(_appConfig.Elasticsearch.IndexName, c => c
-                .Settings(s => s
-                  .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
-                  .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
-                  .Analysis(a => a
-                    .Normalizers(n => n
-                        .Custom("lowerCaseNormalizer", cu => cu
-                            .Filters(new string[]{"lowercase"}))))
+            var indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+
+            if (indexExistsReponse.IsValid && indexExistsReponse.Exists)
+            {
+                var deleteIndexResult = await _elasticClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
+                if (!deleteIndexResult.IsValid)
+                {
+                    _logger.LogError("Unable to delete employee index");
+                    return StatusCode(StatusCodes.Status500InternalServerError);
+                }
+            }
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(1, ex, "Unable to delete Employees index; does not exists");
+            return BadRequest();
+        }
+    }
+
+    private async Task<CreateIndexResponse> CreateIndex()
+    {
+        var response = await _elasticClient.Indices.CreateAsync(_appConfig.Elasticsearch.IndexName, c => c
+            .Settings(s => s
+              .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
+              .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
+              .Analysis(a => a
+                .Normalizers(n => n
+                    .Custom("lowerCaseNormalizer", cu => cu
+                        .Filters(new string[] { "lowercase" }))))
+            )
+            .Map<Employee>(e => e
+              .AutoMap()
+              .Dynamic(DynamicMapping.Strict)
+              .Properties(ps => ps
+                .Keyword(k => k
+                  .Name(n => n.EmployeeId)
                 )
-                .Map<Employee>(e => e
-                  .AutoMap()
-                  .Dynamic(DynamicMapping.Strict)
-                  .Properties(ps => ps
-                    .Keyword(k => k
-                      .Name(n => n.EmployeeId)
-                    )
-                    .Keyword(k => k
-                      .Name(n => n.LastName)
-                      .Normalizer("lowerCaseNormalizer")
-                    )
-                    .Keyword(k => k
-                      .Name(n => n.FirstName)
-                      .Normalizer("lowerCaseNormalizer")
-                    )
-                    .Keyword(k => k
-                      .Name(n => n.FirstPaycheckDate)
-                    )
-                    .Keyword(k => k
-                      .Name(n => n.Salary)
-                    )
+                .Keyword(k => k
+                  .Name(n => n.LastName)
+                  .Normalizer("lowerCaseNormalizer")
                 )
-              )
-            );
+                .Keyword(k => k
+                  .Name(n => n.FirstName)
+                  .Normalizer("lowerCaseNormalizer")
+                )
+                .Keyword(k => k
+                  .Name(n => n.FirstPaycheckDate)
+                )
+                .Keyword(k => k
+                  .Name(n => n.Salary)
+                )
+            )
+          )
+        );
 
-            return response;
-        }
+        return response;
     }
 }

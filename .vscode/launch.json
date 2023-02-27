@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/check-yo-self-indexer/bin/Debug/netcoreapp3.1/check-yo-self-indexer.dll",
+            "program": "${workspaceRoot}/check-yo-self-indexer/bin/Debug/net7.0/check-yo-self-indexer.dll",
             "args": [
                 // "dropdb",
                 // "migratedb",
@@ -28,9 +28,7 @@
                     "command": "xdg-open"
                 }
             },
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            },
+            "envFile": "${workspaceFolder}/.env",
             "sourceFileMap": {
                 "/Views": "${workspaceRoot}/check-yo-self-indexer/Views"
             }
