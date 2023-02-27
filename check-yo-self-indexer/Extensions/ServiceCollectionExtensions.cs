@@ -1,28 +1,27 @@
 using check_yo_self_indexer.Server.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace check_yo_self_indexer.Server.Extensions
+namespace check_yo_self_indexer.Server.Extensions;
+
+public static class ServiceCollectionExtensions
 {
-    public static class ServiceCollectionExtensions
-    {       
-        public static IServiceCollection AddCustomizedMvc(this IServiceCollection services)
+    public static IServiceCollection AddCustomizedMvc(this IServiceCollection services)
+    {
+        services.AddMvc(options =>
         {
-            services.AddMvc(options =>
-            {
-                options.Filters.Add(typeof(ModelValidationFilter));
-            })
-            .AddNewtonsoftJson(options =>             
-            {
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });
-
-            return services;
-        }        
-
-        public static IServiceCollection RegisterCustomServices(this IServiceCollection services)
+            options.Filters.Add(typeof(ModelValidationFilter));
+        })
+        .AddNewtonsoftJson(options =>
         {
-            services.AddScoped<ApiExceptionFilter>();
-            return services;
-        }
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+        });
+
+        return services;
+    }
+
+    public static IServiceCollection RegisterCustomServices(this IServiceCollection services)
+    {
+        services.AddScoped<ApiExceptionFilter>();
+        return services;
     }
 }
