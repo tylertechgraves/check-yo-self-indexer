@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Nest;
+using OpenSearch.Client;
 
 namespace check_yo_self_indexer.Server.Controllers.api;
 
@@ -19,25 +19,13 @@ public class EmployeesController : BaseController
 {
     private readonly ILogger _logger;
     private readonly AppConfig _appConfig;
-    private readonly IElasticClient _elasticClient;
+    private readonly IOpenSearchClient _openSearchClient;
 
-    public EmployeesController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory)
+    public EmployeesController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory, IOpenSearchClient openSearchClient)
     {
         _logger = loggerFactory.CreateLogger<EmployeesController>();
         _appConfig = appConfig.Value;
-
-        var node = new Uri(_appConfig.Elasticsearch.Uri);
-        var elasticSettings = new ConnectionSettings(node);
-
-        if (_appConfig.Elasticsearch.UseAuthentication)
-        {
-            _logger.LogDebug("We did not skip basic auth");
-            elasticSettings.BasicAuthentication(_appConfig.Elasticsearch.Username, _appConfig.Elasticsearch.Password);
-        }
-        else
-            _logger.LogDebug("We skipped basic auth");
-
-        _elasticClient = new ElasticClient(elasticSettings);
+        _openSearchClient = openSearchClient;
     }
 
     [HttpGet]
@@ -48,7 +36,7 @@ public class EmployeesController : BaseController
         try
         {
             // Search for the document using the employeeId field.             
-            var searchResponse = await _elasticClient.SearchAsync<Employee>(s => s
+            var searchResponse = await _openSearchClient.SearchAsync<Employee>(s => s
                 .Index(_appConfig.Elasticsearch.IndexName)
                 .Size(1000)
                 .Query(q => q
@@ -80,7 +68,7 @@ public class EmployeesController : BaseController
         try
         {
             // Search for the document using the employeeId field.             
-            var searchResponse = await _elasticClient.SearchAsync<Employee>(s => s
+            var searchResponse = await _openSearchClient.SearchAsync<Employee>(s => s
                 .Index(_appConfig.Elasticsearch.IndexName)
                 .Size(1000)
                 .Query(q => q
@@ -118,7 +106,7 @@ public class EmployeesController : BaseController
         try
         {
             // Search for the document using the employeeId field.             
-            var searchResponse = await _elasticClient.SearchAsync<Employee>(s => s
+            var searchResponse = await _openSearchClient.SearchAsync<Employee>(s => s
                 .Index(_appConfig.Elasticsearch.IndexName)
                 .Size(1000)
                 .Query(q => q
@@ -156,7 +144,7 @@ public class EmployeesController : BaseController
         try
         {
             // Search for the document using the employeeId field.             
-            var searchResponse = await _elasticClient.SearchAsync<Employee>(s => s
+            var searchResponse = await _openSearchClient.SearchAsync<Employee>(s => s
                 .Index(_appConfig.Elasticsearch.IndexName)
                 .Size(1000)
                 .Query(q => q
@@ -196,7 +184,7 @@ public class EmployeesController : BaseController
                 throw new Exception($"Number of employees exceeds the max allowed bulk index count of {_appConfig.Elasticsearch.MaxBulkInsertCount}");
             }
 
-            var response = await _elasticClient.IndexManyAsync(employees, _appConfig.Elasticsearch.IndexName);
+            var response = await _openSearchClient.IndexManyAsync(employees, _appConfig.Elasticsearch.IndexName);
 
             if (response.Errors || !response.IsValid)
             {
@@ -223,7 +211,7 @@ public class EmployeesController : BaseController
         try
         {
             // Search for the document using the employeeId field.             
-            var searchResponse = await _elasticClient.SearchAsync<Employee>(s => s
+            var searchResponse = await _openSearchClient.SearchAsync<Employee>(s => s
                 .Index(_appConfig.Elasticsearch.IndexName)
                 .From(0)
                 .Size(10)
@@ -239,7 +227,7 @@ public class EmployeesController : BaseController
             if (searchResponse.Hits.Count > 0)
             {
                 var deleteRequest = new DeleteRequest(_appConfig.Elasticsearch.IndexName, searchResponse.Hits.FirstOrDefault().Id);
-                await _elasticClient.DeleteAsync(deleteRequest);
+                await _openSearchClient.DeleteAsync(deleteRequest);
 
                 return NoContent();
             }

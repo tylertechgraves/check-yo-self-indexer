@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Nest;
+using OpenSearch.Client;
 
 namespace check_yo_self_indexer.Server.Controllers.api;
 
@@ -17,33 +17,22 @@ public class IndexManagementController : BaseController
 {
     private readonly ILogger _logger;
     private readonly AppConfig _appConfig;
-    private readonly IElasticClient _elasticClient;
+    private readonly IOpenSearchClient _openSearchClient;
 
-    public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory)
+    public IndexManagementController(IOptionsSnapshot<AppConfig> appConfig, ILoggerFactory loggerFactory, IOpenSearchClient openSearchClient)
     {
         _logger = loggerFactory.CreateLogger<IndexManagementController>();
         _appConfig = appConfig.Value;
-
-        var node = new Uri(_appConfig.Elasticsearch.Uri);
-        var elasticSettings = new ConnectionSettings(node);
-
-        if (_appConfig.Elasticsearch.UseAuthentication)
-        {
-            _logger.LogDebug("We did not skip basic auth");
-            elasticSettings.BasicAuthentication(_appConfig.Elasticsearch.Username, _appConfig.Elasticsearch.Password);
-        }
-        else
-            _logger.LogDebug("We skipped basic auth");
-
-        _elasticClient = new ElasticClient(elasticSettings);
+        _openSearchClient = openSearchClient;
     }
 
     [HttpPost]
     public async Task<IActionResult> Post()
     {
+        var indexName = _appConfig.Elasticsearch.IndexName;
         try
         {
-            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+            var indexExistsResponse = await _openSearchClient.Indices.ExistsAsync(indexName);
 
             if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
             {
@@ -62,8 +51,8 @@ public class IndexManagementController : BaseController
         }
         catch (Exception ex)
         {
-            _logger.LogError(1, ex, "Unable to create Employees index; index already exists");
-            return BadRequest();
+            _logger.LogError(ex, "Unable to create Employees index '{indexName}'", indexName);
+            return StatusCode(StatusCodes.Status500InternalServerError, ex);
         }
 
     }
@@ -80,7 +69,7 @@ public class IndexManagementController : BaseController
             _logger.LogInformation("Username: {username}", _appConfig.Elasticsearch.Username);
             _logger.LogInformation("Password: {password}", _appConfig.Elasticsearch.Password);
 
-            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+            var indexExistsResponse = await _openSearchClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
             if (!indexExistsResponse.Exists)
             {
@@ -119,7 +108,7 @@ public class IndexManagementController : BaseController
     {
         try
         {
-            var indexExistsResponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+            var indexExistsResponse = await _openSearchClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
 
             if (indexExistsResponse.IsValid && indexExistsResponse.Exists)
             {
@@ -143,13 +132,14 @@ public class IndexManagementController : BaseController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Delete()
     {
+        var indexName = _appConfig.Elasticsearch.IndexName;
         try
         {
-            var indexExistsReponse = await _elasticClient.Indices.ExistsAsync(_appConfig.Elasticsearch.IndexName);
+            var indexExistsReponse = await _openSearchClient.Indices.ExistsAsync(indexName);
 
             if (indexExistsReponse.IsValid && indexExistsReponse.Exists)
             {
-                var deleteIndexResult = await _elasticClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
+                var deleteIndexResult = await _openSearchClient.Indices.DeleteAsync(_appConfig.Elasticsearch.IndexName);
                 if (!deleteIndexResult.IsValid)
                 {
                     _logger.LogError("Unable to delete employee index");
@@ -161,14 +151,14 @@ public class IndexManagementController : BaseController
         }
         catch (Exception ex)
         {
-            _logger.LogError(1, ex, "Unable to delete Employees index; does not exists");
-            return BadRequest();
+            _logger.LogError(ex, "Unable to delete Employees index named '{indexName}'", indexName);
+            return StatusCode(StatusCodes.Status500InternalServerError, ex);
         }
     }
 
     private async Task<CreateIndexResponse> CreateIndex()
     {
-        var response = await _elasticClient.Indices.CreateAsync(_appConfig.Elasticsearch.IndexName, c => c
+        var response = await _openSearchClient.Indices.CreateAsync(_appConfig.Elasticsearch.IndexName, c => c
             .Settings(s => s
               .NumberOfReplicas(_appConfig.Elasticsearch.NumberOfReplicas)
               .NumberOfShards(_appConfig.Elasticsearch.NumberOfShards)
