@@ -487,3 +487,5 @@ MigrationBackup/
 .DS_store
 
 /check-yo-self-indexer-SDK/check-yo-self-indexer-client.cs
+
+format-report.json
